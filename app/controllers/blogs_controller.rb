@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
    before_action :set_blog, only: [:edit, :update, :destroy]
  
   def index
-  @blogs=Blog.all
+   @blogs=Blog.all
   end
 
   def new
