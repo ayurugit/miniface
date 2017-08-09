@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
    
   protected
 
+
     #deviseのストロングパラメーターにカラム追加するメソッドを定義
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)
