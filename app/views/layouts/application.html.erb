@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +18,13 @@
     var channel = pusher.subscribe("user_<%= current_user.id %>_channel");
     channel.bind('comment_created', function(data) {
 
-      alert(data.message);
-    });
-  </script>
+        alert(data.message);
+      });
+      channel.bind('notification_created', function(data) {
+        $('#unread_count').html(data.unread_counts);
+      });
+    </script>
+  
   <% end %>
 </head>
 
@@ -44,6 +47,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "お問い合わせ", new_contact_path %></li>
+        
+          <%= link_to notifications_index_path, class: "navbar-brand" do %>
+          <i class="fa fa-bell fa-1x"><span id="unread_count"><%= @notifications_count %></span></i>
+          <% end %>
+ 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
             <ul class="dropdown-menu">
