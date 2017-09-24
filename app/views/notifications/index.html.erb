@@ -6,10 +6,10 @@
   <% @notifications.each do |notification| %>
   <hr>
     <li>
-      <%=  notification.read ? '既読' : '未読' %>
+      <%=  notification.read ? 'もうよんだ' : 'まだよんでない' %>
       <p>
         <%= notification.comment.user.try(:name) %>さんが
-        あなたのブログ（<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>）にコメントしました。
+        きみのTopic（<%= link_to "#{notification.comment.topic.title}", topic_path(notification.comment.topic, notification_id: notification.id) %>）にコメントしたよ！
       </p>
       <p><%= notification.created_at %></p>
     </li>

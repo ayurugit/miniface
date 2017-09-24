@@ -1,0 +1,33 @@
+<div id="pagecover">
+<div class="ribbon11">
+  　　<h3>Topicぜんぶ</h3>
+ </div>
+
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <p><%= notice %></p>
+
+
+      <%= link_to "Topicをつくる", new_topic_path, class: 'btn btn-default' %>
+    <% @topics.each do |topic| %>
+     <div class="row">
+
+      <p><%=profile_img(topic.user) %>     
+        <%= link_to topic_path(topic) do %>
+          <h4><strong><%= topic.title %></strong></h4>
+          <p><%= topic.user.name %></p>
+        <% end %>
+      
+     <p><%= topic.content %></p>      
+      <%= link_to "変える", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success' %>
+      <%= link_to "消しちゃう", topic_path(topic.id), method: :delete, data: { confirm: '本当に消していい？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+     </div>
+     <% end %>
+     
+    <div id="page-top-btn2" class="page-top-btn2">
+     <p><a class="move-page-top2" id="move-page-top2">▲</a></p>
+    </div>
+    
+  </div>
+</div>
+</div>

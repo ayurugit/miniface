@@ -1,11 +1,11 @@
 ja:
   devise:
     confirmations:
-      confirmed: 'アカウントを登録しました。'
+      confirmed: 'アカウントを登録したよ！'
       send_instructions: 'アカウントの有効化について数分以内にメールでご連絡します。'
       send_paranoid_instructions: "あなたのメールアドレスが登録済みの場合、本人確認用のメールが数分以内に送信されます。"
     failure:
-      already_authenticated: 'すでにログインしています。'
+      already_authenticated: 'すでにログインしています'
       inactive: 'アカウントが有効化されていません。メールに記載された手順にしたがって、アカウントを有効化してください。'
       invalid: "%{authentication_keys} もしくはパスワードが不正です。"
       locked: 'あなたのアカウントは凍結されています。'
@@ -41,8 +41,8 @@ ja:
       update_needs_confirmation: 'アカウント情報を変更しました。変更されたメールアドレスの本人確認のため、本人確認用メールより確認処理をおこなってください。'
       updated: 'アカウント情報を変更しました。'
     sessions:
-      signed_in: 'ログインしました。'
-      signed_out: 'ログアウトしました。'
+      signed_in: 'ログインしたよ！'
+      signed_out: 'ログアウトしたよ！'
       already_signed_out: '既にログアウト済みです。'
     unlocks:
       send_instructions: 'アカウントの凍結解除方法を数分以内にメールでご連絡します。'
