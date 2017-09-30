@@ -6,22 +6,32 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-100.times do |n|
+#100.times do |n|
+
+n = 1
+ while n <= 5
   email = Faker::Internet.email
   password = "password"
-  name = Faker::HarryPotter.character
-  User.create!(email: email,
+  name = Gimei.first.hiragana
+  user = User.new(
+   #User.create!(
+               email: email,
                password: password,
                password_confirmation: password,
-               name: name
+               name: name ,
+               uid: n
                )
+  user.skip_confirmation!
+  user.save              
+  n = n + 1
+  
 end
 
  n = 1
- while n <= 100
-    title = Faker::HarryPotter.book
-    content = Faker::HarryPotter.quote
-  Blog.create(
+ while n <= 5
+    title = Faker::SlackEmoji.people
+    content = Faker::SlackEmoji.emoji
+  Topic.create(
     title: title,
     content: content,
     user_id: n
@@ -29,4 +39,3 @@ end
   n = n + 1
    
  end
- 

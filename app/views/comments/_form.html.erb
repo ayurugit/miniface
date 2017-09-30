@@ -1,7 +1,7 @@
 <%= form_for([topic, comment], remote: true) do |f| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= comment.errors.count %>件のエラーがあります。</h2>
+      <h2><%= comment.errors.count %>件のエラーがあるよ</h2>
 
       <ul>
       <% comment.errors.full_messages.each do |msg| %>

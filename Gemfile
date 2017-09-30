@@ -82,3 +82,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'pusher'
+
+gem 'gimei'
+
+gem 'fog'
