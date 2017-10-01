@@ -8,8 +8,8 @@
 
 #100.times do |n|
 
-n = 1
- while n <= 5
+n = 6
+ while n <= 15
   email = Faker::Internet.email
   password = "password"
   name = Gimei.first.hiragana
@@ -27,8 +27,8 @@ n = 1
   
 end
 
- n = 1
- while n <= 5
+ n = 6
+ while n <= 15
     title = Faker::SlackEmoji.people
     content = Faker::SlackEmoji.emoji
   Topic.create(
