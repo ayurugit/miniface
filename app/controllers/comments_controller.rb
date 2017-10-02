@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   # コメントを保存、投稿するためのアクションです。
+
   def create
     @comment = current_user.comments.build(comment_params)
     @topic = @comment.topic
@@ -36,14 +37,34 @@ class CommentsController < ApplicationController
       end
     end
   end
+
   
   def edit
-    @comment = Comment.find(params[:id])
+    @topic = Topic.find(params[:topic_id])
+    @comment= Comment.find(params[:id])  
   end
 
+  def update
+    @topic = Topic.find(params[:topic_id])
+    @comment= Comment.find(params[:id])  
+    respond_to do |format|
+      if @comment.update(comment_params)
+        format.html { redirect_to topic_path(@topic), notice: 'コメントが変わったよ。' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+  
+  
   private
     # ストロングパラメーター
     def comment_params
       params.require(:comment).permit(:topic_id, :content)
     end
+
+    def set_comment
+      @comment = Comment.find(params[:id])
+    end
+    
 end

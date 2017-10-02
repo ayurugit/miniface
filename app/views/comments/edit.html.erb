@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+
+    <h4><%= @topic.user.name %>へのコメントを編集</h4></div>
+    <%= render partial: 'comments/form', locals: { comment: @comment, topic: @topic } %>
+
+  </div>
+</div>
